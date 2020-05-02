@@ -137,6 +137,60 @@ namespace lab2
                 }
             } while (true);
         }
+        static void Task3()
+        {
+            FilmLibrary[] libraries = new FilmLibrary[5];
+
+            libraries[0].Name = "Harry Potter 1";
+            libraries[0].Genre = "Fantasy";
+            libraries[0].Country = "UK";
+            libraries[0].Price1 = 100;
+            libraries[0].Price2 = 200;
+            libraries[0].Price3 = 300;
+
+            libraries[1].Name = "Harry Potter 2";
+            libraries[1].Genre = "Fantasy";
+            libraries[1].Country = "UK";
+            libraries[1].Price1 = 142;
+            libraries[1].Price2 = 344;
+            libraries[1].Price3 = 236;
+
+            libraries[2].Name = "Harry Potter 3";
+            libraries[2].Genre = "Fantasy";
+            libraries[2].Country = "UK";
+            libraries[2].Price1 = 135;
+            libraries[2].Price2 = 475;
+            libraries[2].Price3 = 674;
+
+            libraries[3].Name = "Harry Potter 4";
+            libraries[3].Genre = "Fantasy";
+            libraries[3].Country = "UK";
+            libraries[3].Price1 = 763;
+            libraries[3].Price2 = 942;
+            libraries[3].Price3 = 123;
+
+            libraries[4].Name = "Harry Potter 5";
+            libraries[4].Genre = "Fantasy";
+            libraries[4].Country = "UK";
+            libraries[4].Price1 = 235;
+            libraries[4].Price2 = 643;
+            libraries[4].Price3 = 974;
+
+            for (int i = 0; i < 5; ++i)
+            {
+                Console.WriteLine($"Struct {i}:");
+                Console.WriteLine($"Name: {libraries[i].Name}");
+                Console.WriteLine($"Genre: {libraries[i].Genre}");
+                Console.WriteLine($"Country: {libraries[i].Country}");
+                Console.WriteLine($"Price1: {libraries[i].Price1}");
+                Console.WriteLine($"Price2: {libraries[i].Price2}");
+                Console.WriteLine($"Price3: {libraries[i].Price3}\n");
+            }
+            (string, int, string, int, int, int) librarie1 = (libraries[0].Name, 2020, libraries[0].Country, libraries[0].Price1, libraries[0].Price2, libraries[0].Price3);
+            Console.WriteLine("\nTuple:");
+            Console.WriteLine(librarie1);
+            Console.WriteLine($"\nWhen We use methood: {GetTuple(librarie1, libraries[0])}");
+        }
         static int menu()
         {
             do
@@ -515,9 +569,10 @@ namespace lab2
             Console.ReadKey();
             return str;
         }
-        static void Task3()
+        static (string name, string country, string code, float price, string thisCountry) GetTuple((string name, int year, string country, int price1, int price2, int price3) libraryl, FilmLibrary library)
         {
-
+            var result = (libraryl.name, library.Genre, code: library.Genre + libraryl.year.ToString(), price: (libraryl.price1 + libraryl.price2 + libraryl.price3) / 3, thisCountry: libraryl.country == library.Country ? "Yes" : "No");
+            return result;
         }
     }
 }
