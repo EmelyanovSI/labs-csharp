@@ -28,8 +28,7 @@ namespace lab6
         private void FileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             animateToolStripMenuItem.Enabled = false;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files(*.txt)|*.txt";
+            OpenFileDialog openFileDialog = new OpenFileDialog { Filter = "Text files(*.txt)|*.txt" };
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
