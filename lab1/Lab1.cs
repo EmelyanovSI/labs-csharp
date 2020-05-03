@@ -129,7 +129,7 @@ namespace lab1
             }
             else if (x > 3 && x < 8)
             {
-                f = 0.5 * (x - 3);
+                f = 0.6 * (x - 3);
             }
             else if (x >= 8 && x <= 10)
             {

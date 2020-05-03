@@ -28,7 +28,8 @@ namespace lab6
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void ToolStripMenuItem2_Click(object sender, EventArgs e)
