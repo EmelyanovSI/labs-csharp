@@ -38,9 +38,10 @@ namespace lab6
             form4.ShowDialog();
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
         }
     }
 }
