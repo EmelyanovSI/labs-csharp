@@ -80,7 +80,26 @@ namespace lab4
         }
         static void Task2()
         {
-            
+            Vehicle[] vehicles = new Vehicle[4];
+            vehicles[0] = new Car { coordinateX = 1, coordinateY = 11, cost = 5000, speed = 200, year = 2015 };
+            Plane p = new Plane { coordinateX = 3, coordinateY = 2, cost = 123133412, speed = 1030, year = 2018 };
+            p.setCapacity(100);
+            vehicles[1] = p;
+            Ship s = new Ship { coordinateX = 5, coordinateY = 7, cost = 5123000, speed = 120, year = 2000 };
+            s.setCapacity(1300);
+            s.setPort("Spain");
+            vehicles[2] = s;
+            vehicles[3] = new Car { coordinateX = 1, coordinateY = 11, cost = 5000, speed = 200, year = 2015 };
+            Console.WriteLine("Transport list:");
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                Console.WriteLine(vehicles[i]);
+            }
+            Console.Write("1st vehicle equals 2nd vehicle : ");
+            Console.WriteLine(vehicles[0].Equals(vehicles[1]));
+            Console.Write("1st vehicle equals 4nd vehicle : ");
+            Console.WriteLine(vehicles[0].Equals(vehicles[3]));
+            Console.ReadKey();
         }
     }
 }
