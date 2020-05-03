@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace lab3
 {
-    class Program
+    class Lab3
     {
         private static string MENU =
             "1. Task1\n" +

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace lab2
 {
-    class Program
+    class Lab2
     {
         static void Main(string[] args)
         {
