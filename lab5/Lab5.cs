@@ -9,6 +9,7 @@ namespace lab5
             "2. Task2\n" +
             "e. Exit\n";
         delegate int Func(int x, int y);
+        delegate bool Condition(int x);
 
         static void Main(string[] args)
         {
@@ -87,10 +88,61 @@ namespace lab5
         }
         static void Task2()
         {
-            
+            Random random = new Random();
+            int[] array = new int[10];
+            for (int i = 0; i < array.Length; ++i)
+            {
+                array[i] = random.Next(-100, 100);
+            }
+            for (int i = 0; i < array.Length; ++i)
+            {
+                Console.Write($"{array[i]} ");
+            }
+            Console.WriteLine();
+            Console.Write("Method#: ");
+            int method = Convert.ToInt32(Console.ReadLine());
+            if (method == 1)
+            {
+                Condition condition = x => x % 8 == 0;
+                Console.WriteLine("Sum of elements that are multiple of 8: " + Func1(array, condition));
+            }
+            else if (method == 2)
+            {
+                Condition condition = x => x > 5;
+                Console.WriteLine("Multiplication of elements that are greater than 5: " + Func2(array, condition));
+            }
+            else
+            {
+                Console.WriteLine("Input error, try again!");
+            }
+            Console.ReadKey();
         }
         static int FuncF(int x, int y) => x + y + 2;
         static int FuncG(int x, int y) => 7 * x + y;
         static int FuncZ(Func func, int x, int y) => 5 * func(x, y) - 2 * func(x, y - 1);
+        static int Func1(int[] array, Condition condition)
+        {
+            int sum = 0;
+            for (int i = 0; i < array.Length; ++i)
+            {
+                if (condition(array[i]))
+                {
+                    sum += array[i];
+                }
+            }
+            return sum;
+        }
+        static int Func2(int[] array, Condition condition)
+        {
+            int mul = 1;
+            for (int i = 0; i < array.Length; ++i)
+            {
+                if (condition(array[i]))
+                {
+                    mul *= array[i];
+                }
+            }
+            return mul;
+        }
     }
 }
