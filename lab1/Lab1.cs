@@ -78,7 +78,7 @@ namespace lab1
             const double b = Math.PI;
             const double k = 10;
             const double h = (b - a) / k;
-            ConsoleKeyInfo keyInfo;
+        ConsoleKeyInfo keyInfo;
             do
             {
                 Console.Clear();
@@ -99,7 +99,7 @@ namespace lab1
                         {
                             sx += xn = Math.Cos((2 * n - 1) * x) / Math.Pow(2 * n++ - 1, 2);
                         }
-                        double fx = Math.Pow(Math.PI / 4, 2) - Math.PI / 4 * Math.Abs(x);
+                        double fx = (Math.Pow(Math.PI, 2) / 8) - ((Math.PI / 4) * Math.Abs(x));
                         Print(x, sx, n, fx);
                     }
                     Console.WriteLine("-------------------------------------------------");
