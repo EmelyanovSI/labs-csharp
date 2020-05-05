@@ -1,0 +1,41 @@
+﻿<Window x:Class="lab8.Views.AddWeather"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AddWeather" Height="450" Width="800"
+        DataContext="{Binding ElementName=wind, Path=.}">
+
+    <Grid Background="#e3e3e3">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="5">
+                <TextBlock Text="Date" TextAlignment="Center" />
+                <DatePicker x:Name="dateBox" x:FieldModifier="public" MinWidth="80" />
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Temperature" TextAlignment="Center" />
+                <TextBox x:Name="temperatureBox" x:FieldModifier="public" MinWidth="80" PreviewKeyDown="TextBoxPreviewKeyDown" />
+            </StackPanel>
+
+            <StackPanel Margin="5" VerticalAlignment="Bottom">
+                <CheckBox x:Name="rainfallBox" x:FieldModifier="public" MinWidth="80" Content="Rainfall" />
+            </StackPanel>
+            
+            <StackPanel Margin="5">
+                <TextBlock Text="Region id" TextAlignment="Center" />
+                <TextBox x:Name="regionBox" x:FieldModifier="public" MinWidth="80" PreviewKeyDown="TextBoxPreviewKeyDown"  />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button x:Name="okBtn" Content="Ok" Click="OkBtn_Click" Margin="5" Padding="4" />
+            <Button x:Name="cancelBtn" Content="Cancel" Click="Cancel_Click" Margin="5" Padding="4"/>
+        </StackPanel>
+    </Grid>
+</Window>

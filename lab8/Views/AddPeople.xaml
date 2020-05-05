@@ -1,0 +1,43 @@
+﻿<Window x:Class="lab8.Views.AddPeople"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="AddPeople" Height="450" Width="800"
+        x:Name="wind"
+        DataContext="{Binding ElementName=wind, Path=.}">
+
+    <Grid Background="#e3e3e3">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="5">
+                <TextBlock Text="Name" TextAlignment="Center" />
+                <TextBox x:Name="nameBox" x:FieldModifier="public" MinWidth="80" Padding="3" />
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Language" TextAlignment="Center" />
+                <TextBox x:Name="languageBox" x:FieldModifier="public" MinWidth="80" Padding="3" />
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Picture" TextAlignment="Center" />
+                <Image x:Name="image" Source="{Binding Img}" MaxWidth="50" x:FieldModifier="public" />
+            </StackPanel>
+
+            <StackPanel Margin="5" VerticalAlignment="Bottom">
+                <Button Content="Select..." Click="SelectImage" HorizontalContentAlignment="Center" Background="White" Padding="0" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="357,273,345,0">
+            <Button x:Name="okBtn" Content="Ok" Click="OkBtn_Click" Margin="5" Padding="4" />
+            <Button x:Name="cancelBtn" Content="Cancel" Click="Сancel_Click" Margin="5" Padding="4"/>
+        </StackPanel>
+    </Grid>
+</Window>
